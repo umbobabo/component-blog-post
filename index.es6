@@ -4,21 +4,24 @@ import Teaser from '@economist/component-teaser';
 export default class BlogPost extends React.Component {
   static get propTypes() {
     return {
-      image: React.PropTypes.object,
+      image: React.PropTypes.shape({
+        src: React.PropTypes.string
+      }),
       section: React.PropTypes.string,
       flyTitle: React.PropTypes.string,
       title: React.PropTypes.string.isRequired,
       dateTime: React.PropTypes.instanceOf(Date),
-      dateFormat: React.PropTypes.instanceOf(Function),
+      dateFormat: React.PropTypes.func,
       text: React.PropTypes.string,
-      link: React.PropTypes.object,
       itemType: React.PropTypes.string,
       itemProp: React.PropTypes.string,
     };
   }
   static get defaultProps() {
     return {
-      ...Teaser.defaultProps
+      itemType: 'http://schema.org/BlogPosting',
+      itemProp: 'blogPost',
+      dateFormat: Teaser.defaultProps.dateFormat,
     };
   }
   render() {

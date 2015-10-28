@@ -12,8 +12,8 @@ describe(`BlogPost`, () => {
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
     post, 'blog-post__section');
-    elm.props.className.should.be.equal('blog-post__section');
-    elm.props.children.should.be.equal('section');
+    elm.props.className.should.equal('blog-post__section');
+    elm.props.children.should.equal('section');
   });
   it(`renders a flytitle`, () => {
     const post = TestUtils.renderIntoDocument(
@@ -24,8 +24,8 @@ describe(`BlogPost`, () => {
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
     post, 'blog-post__flytitle');
-    elm.props.className.should.be.equal('blog-post__flytitle');
-    elm.props.children.should.be.equal('flytitle');
+    elm.props.className.should.equal('blog-post__flytitle');
+    elm.props.children.should.equal('flytitle');
   });
   it(`renders a title`, () => {
     const post = TestUtils.renderIntoDocument(
@@ -33,8 +33,8 @@ describe(`BlogPost`, () => {
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
     post, 'blog-post__title');
-    elm.props.className.should.be.equal('blog-post__title');
-    elm.props.children.should.be.equal('title');
+    elm.props.className.should.equal('blog-post__title');
+    elm.props.children.should.equal('title');
   });
   it(`renders a dateTime`, () => {
     const today = new Date();
@@ -50,8 +50,8 @@ describe(`BlogPost`, () => {
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
     post, 'blog-post__datetime');
-    elm.props.className.should.be.equal('blog-post__datetime');
-    elm.props.children.should.be.equal(today.toString());
+    elm.props.className.should.equal('blog-post__datetime');
+    elm.props.children.should.equal(today.toString());
   });
   it(`renders a text`, () => {
     const post = TestUtils.renderIntoDocument(
@@ -62,9 +62,9 @@ describe(`BlogPost`, () => {
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
     post, 'blog-post__text');
-    elm.props.className.should.be.equal('blog-post__text');
+    elm.props.className.should.equal('blog-post__text');
     /* eslint-disable dot-notation */
-    elm.props.dangerouslySetInnerHTML['__html'].should.be.equal('BlogPost text');
+    elm.props.dangerouslySetInnerHTML['__html'].should.equal('BlogPost text');
   });
   it(`renders an image`, () => {
     const img = {
@@ -77,8 +77,8 @@ describe(`BlogPost`, () => {
       />);
     const elm = TestUtils.findRenderedDOMComponentWithClass(
     post, 'blog-post__img');
-    elm.props.className.should.be.equal('blog-post__img');
-    elm.props.src.should.be.equal('//cdn.static-economist.com/sites/all/themes/econfinal/images/svg/logo.svg');
-    elm.props.alt.should.be.equal('Example');
+    elm.props.className.should.equal('blog-post__img');
+    elm.props.src.should.equal('//cdn.static-economist.com/sites/all/themes/econfinal/images/svg/logo.svg');
+    elm.props.alt.should.equal('Example');
   });
 });
