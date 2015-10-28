@@ -1,0 +1,88 @@
+@import '@economist/component-typography';
+@import '@economist/component-palette';
+@import '@economist/component-grid';
+
+.blog-post {
+  font-size: 1rem;
+}
+
+.blog-post__img,
+.blog-post__group-image,
+.blog-post__group-text {
+  max-width: 40rem;
+}
+
+.blog-post__img {
+  height: auto;
+  margin-bottom: 1.45em;
+  border: medium none;
+}
+.blog-post__group-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-post__title {
+  font-size: var(--text-size-step-3);
+  line-height: var(--text-line-height-body-bold-on-step-3);
+  letter-spacing: var(--text-letter-spacing-body-bold-on-step-3);
+  font-weight: bold;
+  font-family: 'Halifax Bold';
+  color: var(--blog-post-color-title, var(--color-beijing));
+  order: 3;
+  margin: 0;
+}
+
+.blog-post__section {
+  font-size: var(--text-size-step--2);
+  line-height: var(--text-line-height-body-on-step--2);
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-family: 'Halifax Light';
+  color: var(--blog-post-color-section, var(--color-economist));
+  order: 1;
+  margin: 0;
+  margin-bottom: var(--grid-spacing-mouse);
+}
+
+.blog-post__flytitle {
+  font-size: var(--text-size-step-0);
+  line-height: var(--text-line-height-body-on-step-0);
+  font-weight: lighter;
+  font-family: 'Halifax Light';
+  color: var(--blog-post-color-flytitle, var(--color-economist));
+  order: 2;
+  margin: 0;
+  margin-bottom: var(--grid-spacing-mouse);
+}
+
+.blog-post__text {
+  font-size: var(--text-size-step-0);
+  line-height: var(--text-line-height-body-light-on-step-0);
+  font-weight: lighter;
+  font-family: 'Halifax Light';
+  color: var(--blog-post-color-text, var(--color-beijing));
+  order: 4;
+  margin-top: var(--grid-spacing-rabbit);
+}
+
+.blog-post__datetime {
+  font-size: var(--text-size-step--2);
+  line-height: var(--text-line-height-body-light-on-step--2);
+  letter-spacing: var(--text-letter-spacing-body-light-on-step--2);
+  font-weight: lighter;
+  font-family: 'Halifax Light';
+  color: var(--blog-post-color-datetime, var(--color-moscow));
+  order: 5;
+  margin-top: var(--grid-spacing-rabbit);
+}
+
+.blog-post__datetime:before {
+  content: '';
+  width: 3rem;
+  height: 0.1rem;
+  background-color: var(--blog-post-background-color-datetime, var(--color-berlin));
+  display: block;
+  margin-bottom: var(--grid-spacing-hedgehog);
+}
+
