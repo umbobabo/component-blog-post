@@ -3,9 +3,9 @@
 The blog post component is a simple element to show a blog post.
 This component is primarily for the blog post page.
 
-Colours overwrite:
+Overridable variables:
 ------------------
-You can override default value for colours introducing variables as below:
+You can override the following variables:
 
     :root {
       --blog-post-color-title: green;
@@ -13,4 +13,13 @@ You can override default value for colours introducing variables as below:
       --blog-post-color-text: yellow;
       --blog-post-color-datetime: black;
       --blog-post-background-color-datetime: purple;
+
+      --blog-post-section-bottom-margin: 10px;
+
+      --blog-post-flytitle-bottom-margin: 10px;
+
+      --blog-post-text-top-margin: 10px;
+
+      --blog-post-datetime-top-margin: 10px;
+      --blog-post-datetime-bottom-margin: 10px;
     }
