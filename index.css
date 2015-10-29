@@ -29,7 +29,6 @@
   font-weight: bold;
   font-family: 'Halifax Bold';
   color: var(--blog-post-color-title, var(--color-beijing));
-  order: 3;
   margin: 0;
 }
 
@@ -40,7 +39,6 @@
   font-weight: lighter;
   font-family: 'Halifax Light';
   color: var(--blog-post-color-section, var(--color-economist));
-  order: 1;
   margin: 0;
   margin-bottom: var(--blog-post-section-bottom-margin, var(--grid-spacing-mouse));
 }
@@ -51,7 +49,6 @@
   font-weight: lighter;
   font-family: 'Halifax Light';
   color: var(--blog-post-color-flytitle, var(--color-economist));
-  order: 2;
   margin: 0;
   margin-bottom: var(--blog-post-flytitle-bottom-margin, var(--grid-spacing-mouse));
 }
@@ -62,7 +59,6 @@
   font-weight: lighter;
   font-family: 'Halifax Light';
   color: var(--blog-post-color-text, var(--color-beijing));
-  order: 4;
   margin-top: var(--blog-post-text-top-margin, var(--grid-spacing-rabbit));
 }
 
@@ -73,7 +69,6 @@
   font-weight: lighter;
   font-family: 'Halifax Light';
   color: var(--blog-post-color-datetime, var(--color-moscow));
-  order: 5;
   margin-top: var(--blog-post-datetime-top-margin, var(--grid-spacing-rabbit));
 }
 
