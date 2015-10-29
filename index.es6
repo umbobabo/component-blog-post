@@ -7,6 +7,7 @@ export default class BlogPost extends React.Component {
       image: React.PropTypes.shape({
         src: React.PropTypes.string
       }),
+      author: React.PropTypes.string,
       section: React.PropTypes.string,
       flyTitle: React.PropTypes.string,
       title: React.PropTypes.string.isRequired,
@@ -102,6 +103,16 @@ export default class BlogPost extends React.Component {
           dateTime={this.props.dateTime}
           key={`blog-post__datetime`}
         >{this.props.dateFormat(this.props.dateTime)}</time>));
+    }
+    if (this.props.author) {
+      content.push((
+        <div
+          className="blog-post__author"
+          itemProp="author"
+          key={`blog-post__author`}
+        >
+          {this.props.author}
+        </div>));
     }
     if (this.props.text) {
       content.push((
