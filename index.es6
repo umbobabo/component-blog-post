@@ -1,5 +1,4 @@
 import React from 'react';
-import Teaser from '@economist/component-teaser';
 
 export default class BlogPost extends React.Component {
   static get propTypes() {
