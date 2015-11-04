@@ -14,6 +14,7 @@ export default class BlogPost extends React.Component {
       dateTime: React.PropTypes.instanceOf(Date),
       dateFormat: React.PropTypes.func,
       text: React.PropTypes.string,
+      afterText: React.PropTypes.node,
       itemType: React.PropTypes.string,
       itemProp: React.PropTypes.string,
     };
@@ -125,6 +126,9 @@ export default class BlogPost extends React.Component {
             '__html': this.props.text,
           }}
         />));
+    }
+    if (this.props.afterText) {
+      content.push(this.props.afterText);
     }
     groups.push((
       <div className="blog-post__group-text"
