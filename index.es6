@@ -3,9 +3,6 @@ import React from 'react';
 export default class BlogPost extends React.Component {
   static get propTypes() {
     return {
-      image: React.PropTypes.shape({
-        src: React.PropTypes.string
-      }),
       author: React.PropTypes.string,
       section: React.PropTypes.string,
       flyTitle: React.PropTypes.string,
@@ -58,17 +55,6 @@ export default class BlogPost extends React.Component {
   render() {
     const content = [];
     const groups = [];
-    if (this.props.image && this.props.image.src) {
-      groups.push((
-        <div className="blog-post__group-image"
-          key={`blog-post__group-image`}
-        >
-          <img {...this.props.image}
-            itemProp="image"
-            className="blog-post__img"
-          />
-        </div>));
-    }
     if (this.props.section) {
       content.push((
         <h3

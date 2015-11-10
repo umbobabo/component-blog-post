@@ -6,22 +6,6 @@
   font-size: 1rem;
 }
 
-.blog-post__img,
-.blog-post__group-image,
-.blog-post__group-text {
-  max-width: 40rem;
-}
-
-.blog-post__img {
-  height: auto;
-  margin-bottom: 1.45em;
-  border: medium none;
-}
-.blog-post__group-text {
-  display: flex;
-  flex-direction: column;
-}
-
 .blog-post__title {
   font-size: var(--text-size-step-3);
   line-height: var(--text-line-height-body-bold-on-step-3);
