@@ -6,6 +6,12 @@
   font-size: 1rem;
 }
 
+.blog-post__rubric {
+  font-style: italic;
+  padding-left: var(--rubric-padding-left, var(--grid-spacing-mouse));
+  padding-right: var(--rubric-padding-left, var(--grid-spacing-mouse));
+}
+
 .blog-post__title {
   font-size: var(--text-size-step-3);
   line-height: var(--text-line-height-body-bold-on-step-3);

@@ -7,9 +7,10 @@ export default class BlogPost extends React.Component {
       section: React.PropTypes.string,
       flyTitle: React.PropTypes.string,
       title: React.PropTypes.string.isRequired,
+      rubric: React.PropTypes.string,
       dateTime: React.PropTypes.instanceOf(Date),
       dateFormat: React.PropTypes.func,
-      text: React.PropTypes.string,
+      text: React.PropTypes.string.isRequired,
       afterText: React.PropTypes.node,
       itemType: React.PropTypes.string,
       itemProp: React.PropTypes.string,
@@ -55,11 +56,20 @@ export default class BlogPost extends React.Component {
   render() {
     const content = [];
     const groups = [];
+    if (this.props.rubric) {
+      content.push((
+        <div
+          className="blog-post__rubric"
+          itemProp="description"
+          key={`blog-post__rubric`}
+        >{this.props.rubric}</div>
+      ));
+    }
     if (this.props.section) {
       content.push((
         <h3
           className="blog-post__section"
-          itemProp="section"
+          itemProp="articleSection"
           key={`blog-post__section`}
         >{this.props.section}</h3>
       ));
