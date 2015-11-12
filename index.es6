@@ -3,6 +3,8 @@ import React from 'react';
 export default class BlogPost extends React.Component {
   static get propTypes() {
     return {
+      className: React.PropTypes.string,
+
       author: React.PropTypes.string,
       section: React.PropTypes.string,
       flyTitle: React.PropTypes.string,
@@ -91,14 +93,22 @@ export default class BlogPost extends React.Component {
           key={`blog-post__title`}
         >{this.props.title}</h1>));
     }
+    const asideableContent = [];
     if (this.props.dateTime) {
-      content.push((
+      asideableContent.push((
         <time
           className="blog-post__datetime"
           itemProp="dateCreated"
           dateTime={this.props.dateTime}
           key={`blog-post__datetime`}
         >{this.props.dateFormat(this.props.dateTime)}</time>));
+    }
+    if (asideableContent.length) {
+      content.push((
+        <div className="blog-post__asideable-content">
+          {asideableContent}
+        </div>
+      ))
     }
     if (this.props.author) {
       content.push((
@@ -133,9 +143,14 @@ export default class BlogPost extends React.Component {
       </div>
     ));
 
+    let className = 'blog-post';
+    if (this.props.className) {
+      className += ' ' + this.props.className;
+    }
+
     return (
       <article
-        className="blog-post"
+        className={className}
         itemScope itemType={this.props.itemType} itemProp={this.props.itemProp}
         role="article"
       >
