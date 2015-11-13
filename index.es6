@@ -4,7 +4,9 @@ export default class BlogPost extends React.Component {
   static get propTypes() {
     return {
       className: React.PropTypes.string,
-
+      image: React.PropTypes.shape({
+        src: React.PropTypes.string
+      }),
       author: React.PropTypes.string,
       section: React.PropTypes.string,
       flyTitle: React.PropTypes.string,
@@ -66,6 +68,17 @@ export default class BlogPost extends React.Component {
           key={`blog-post__rubric`}
         >{this.props.rubric}</div>
       ));
+    }
+    if (this.props.image && this.props.image.src) {
+      groups.push((
+        <div className="blog-post__group-image"
+          key={`blog-post__group-image`}
+        >
+          <img {...this.props.image}
+            itemProp="image"
+            className="blog-post__img"
+          />
+        </div>));
     }
     if (this.props.section) {
       content.push((
