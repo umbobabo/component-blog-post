@@ -59,7 +59,6 @@ export default class BlogPost extends React.Component {
   }
   render() {
     const content = [];
-    const groups = [];
     if (this.props.section) {
       content.push((
         <h3
@@ -96,15 +95,15 @@ export default class BlogPost extends React.Component {
       ));
     }
     if (this.props.image && this.props.image.src) {
-      groups.push((
-        <div className="blog-post__group-image"
-          key={`blog-post__group-image`}
+      content.push((
+        <figure className="blog-post__image"
+          key={`blogimg`}
         >
           <img {...this.props.image}
             itemProp="image"
-            className="blog-post__img"
+            className="blog-post__image-block"
           />
-        </div>));
+        </figure>));
     }
     const asideableContent = [];
     if (this.props.dateTime) {
@@ -148,13 +147,6 @@ export default class BlogPost extends React.Component {
     if (this.props.afterText) {
       content.push(this.props.afterText);
     }
-    groups.push((
-      <div className="blog-post__group-text"
-        key={`blog-post__grouptext`}
-      >
-        {content}
-      </div>
-    ));
 
     let className = 'blog-post';
     if (this.props.className) {
@@ -167,7 +159,7 @@ export default class BlogPost extends React.Component {
         itemScope itemType={this.props.itemType} itemProp={this.props.itemProp}
         role="article"
       >
-        {groups}
+        {content}
       </article>
     );
   }
