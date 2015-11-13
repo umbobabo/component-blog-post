@@ -60,26 +60,6 @@ export default class BlogPost extends React.Component {
   render() {
     const content = [];
     const groups = [];
-    if (this.props.rubric) {
-      content.push((
-        <div
-          className="blog-post__rubric"
-          itemProp="description"
-          key={`blog-post__rubric`}
-        >{this.props.rubric}</div>
-      ));
-    }
-    if (this.props.image && this.props.image.src) {
-      groups.push((
-        <div className="blog-post__group-image"
-          key={`blog-post__group-image`}
-        >
-          <img {...this.props.image}
-            itemProp="image"
-            className="blog-post__img"
-          />
-        </div>));
-    }
     if (this.props.section) {
       content.push((
         <h3
@@ -105,6 +85,26 @@ export default class BlogPost extends React.Component {
           itemProp="headline"
           key={`blog-post__title`}
         >{this.props.title}</h1>));
+    }
+    if (this.props.rubric) {
+      content.push((
+        <div
+          className="blog-post__rubric"
+          itemProp="description"
+          key={`blog-post__rubric`}
+        >{this.props.rubric}</div>
+      ));
+    }
+    if (this.props.image && this.props.image.src) {
+      groups.push((
+        <div className="blog-post__group-image"
+          key={`blog-post__group-image`}
+        >
+          <img {...this.props.image}
+            itemProp="image"
+            className="blog-post__img"
+          />
+        </div>));
     }
     const asideableContent = [];
     if (this.props.dateTime) {
