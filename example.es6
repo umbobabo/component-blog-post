@@ -12,6 +12,7 @@ export default (
       section="International"
       flyTitle="The UN, religion and development"
       title="Faith and secular global bodies learn to live together"
+      rubric="A different critique was put forward recently by a representative of the Bahai faith, which originated in 19th century Persia but is now flourishing in smallish pockets throughout the world, while facing persecution in its homeland."
       dateTime={today}
       text="THERE are many reasons why sceptics might find fault with the 17
       Sustainable Development Goals, along with 169 associated targets, which
