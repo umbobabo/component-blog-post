@@ -59,15 +59,6 @@ export default class BlogPost extends React.Component {
   }
   render() {
     const content = [];
-    if (this.props.section) {
-      content.push((
-        <h3
-          className="blog-post__section"
-          itemProp="articleSection"
-          key={`blog-post__section`}
-        >{this.props.section}</h3>
-      ));
-    }
     if (this.props.flyTitle) {
       content.push((
         <h2
@@ -106,6 +97,15 @@ export default class BlogPost extends React.Component {
         </figure>));
     }
     const asideableContent = [];
+    if (this.props.section) {
+      asideableContent.push((
+        <h3
+          className="blog-post__section"
+          itemProp="articleSection"
+          key={`blog-post__section`}
+        >{this.props.section}</h3>
+      ));
+    }
     if (this.props.dateTime) {
       asideableContent.push((
         <time
@@ -117,7 +117,7 @@ export default class BlogPost extends React.Component {
     }
     if (asideableContent.length) {
       content.push((
-        <div className="blog-post__asideable-content">
+        <div className="blog-post__asideable-content blog-post__asideable-content--meta">
           {asideableContent}
         </div>
       ))

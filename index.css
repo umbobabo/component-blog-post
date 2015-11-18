@@ -4,48 +4,37 @@
 
 .blog-post {
   font-size: 1rem;
+  font-family: var(--fontfamily-body);
+  font-size: var(--text-size-step-0);
+  line-height: var(--text-line-height-body-on-step-0);
 }
 
 .blog-post__image {
-  margin: 0; padding: 0;  /* Resetting default browser styles */
+  padding: 0;  /* Resetting default browser styles */
+  margin-top: var(--blog-post-image-spacing, var(--grid-spacing-rhino));
 }
 
 .blog-post__image-block {
   max-width: 100%;
   height: auto;
-  margin-bottom: 1.45em;
   border: medium none;
+  display: block;  /* Because if it was inline it would have a line-height */
 }
 
 .blog-post__title {
-  font-size: var(--text-size-step-3);
-  line-height: var(--text-line-height-body-bold-on-step-3);
-  letter-spacing: var(--text-letter-spacing-body-bold-on-step-3);
-  font-weight: bold;
-  font-family: 'Halifax Bold';
+  font-size: var(--text-size-step-7);
+  line-height: var(--text-line-height-body-on-step-7);
+  letter-spacing: var(--text-letter-spacing-body-on-step-7);
   color: var(--blog-post-color-title, var(--color-beijing));
-  margin: 0;
-}
-
-.blog-post__section {
-  font-size: var(--text-size-step--2);
-  line-height: var(--text-line-height-body-on-step--2);
-  text-transform: uppercase;
-  font-weight: lighter;
-  font-family: 'Halifax Light';
-  color: var(--blog-post-color-section, var(--color-economist));
-  margin: 0;
-  margin-bottom: var(--blog-post-section-bottom-margin, var(--grid-spacing-mouse));
+  margin: var(--blog-post-title-spacing, var(--grid-spacing-mouse)) 0;
 }
 
 .blog-post__flytitle {
-  font-size: var(--text-size-step-0);
-  line-height: var(--text-line-height-body-on-step-0);
+  font-size: var(--text-size-step--1);
+  line-height: var(--text-line-height-body-light-on-step--1);
   font-weight: lighter;
-  font-family: 'Halifax Light';
   color: var(--blog-post-color-flytitle, var(--color-economist));
-  margin: 0;
-  margin-bottom: var(--blog-post-flytitle-bottom-margin, var(--grid-spacing-mouse));
+  margin: var(--blog-post-flytitle-spacing, var(--grid-spacing-sloth)) 0;
 }
 
 .blog-post__text,
@@ -57,8 +46,7 @@
 
 .blog-post__rubric {
   font-style: italic;
-  padding-left: var(--rubric-padding-left, var(--grid-spacing-mouse));
-  padding-right: var(--rubric-padding-left, var(--grid-spacing-mouse));
+  margin: var(--blog-post-rubric-spacing, var(--grid-spacing-camel)) 0;
 }
 
 .blog-post__text {
@@ -66,22 +54,33 @@
   color: var(--blog-post-color-text, var(--color-beijing));
 }
 
+.blog-post__asideable-content--meta {
+  margin-top: var(--blog-post-meta-spacing, var(--grid-spacing-donkey));
+  margin-bottom: var(--blog-post-meta-spacing, var(--grid-spacing-donkey));
+}
+
 .blog-post__datetime {
   font-size: var(--text-size-step--2);
   line-height: var(--text-line-height-body-light-on-step--2);
   letter-spacing: var(--text-letter-spacing-body-light-on-step--2);
   font-weight: lighter;
-  font-family: 'Halifax Light';
   color: var(--blog-post-color-datetime, var(--color-moscow));
-  margin-top: var(--blog-post-datetime-top-margin, var(--grid-spacing-rabbit));
 }
 
-.blog-post__datetime::before {
-  content: '';
-  width: 3rem;
-  height: 0.1rem;
-  background-color: var(--blog-post-background-color-datetime, var(--color-berlin));
-  display: block;
-  margin-bottom: var(--blog-post-datetime-bottom-margin, var(--grid-spacing-hedgehog));
+.blog-post__section {
+  font-size: var(--text-size-step--2);
+  line-height: var(--text-line-height-body-on-step--2);
+  text-transform: uppercase;
+  font-weight: lighter;
+  color: var(--blog-post-color-section, var(--color-london));
+  margin: 0;
+  display: inline;
+}
+
+.blog-post__asideable-content > * + *:before {
+  content: '|';
+  display: inline;
+  margin: 0 1em;
+  color: var(--blog-post-color-meta-separator, var(--color-london));
 }
 

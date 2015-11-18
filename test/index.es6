@@ -75,9 +75,8 @@ describe(`BlogPost`, () => {
       <BlogPost image={img}
         title="Required"
       />);
-    const elm = TestUtils.findRenderedDOMComponentWithClass(
-    post, 'blog-post__img');
-    elm.props.className.should.equal('blog-post__img');
+    const elm = TestUtils.findRenderedDOMComponentWithClass(post, 'blog-post__image-block');
+    elm.props.className.should.equal('blog-post__image-block');
     elm.props.src.should.equal('//cdn.static-economist.com/sites/all/themes/econfinal/images/svg/logo.svg');
     elm.props.alt.should.equal('Example');
   });

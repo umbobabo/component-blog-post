@@ -13,13 +13,15 @@ You can override the following variables:
       --blog-post-color-text: yellow;
       --blog-post-color-datetime: black;
       --blog-post-background-color-datetime: purple;
+      --blog-post-color-meta-separator: red;
 
-      --blog-post-section-bottom-margin: 10px;
+      --blog-post-flytitle-spacing: 10px;
 
-      --blog-post-flytitle-bottom-margin: 10px;
+      --blog-post-rubric-spacing: 20px;
+
+      --blog-post-image-spacing: 20px;
+
+      --blog-post-meta-spacing: 20px;
 
       --blog-post-text-top-margin: 10px;
-
-      --blog-post-datetime-top-margin: 10px;
-      --blog-post-datetime-bottom-margin: 10px;
     }
