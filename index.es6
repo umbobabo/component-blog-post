@@ -117,7 +117,7 @@ export default class BlogPost extends React.Component {
     }
     if (asideableContent.length) {
       content.push((
-        <div className="blog-post__asideable-content blog-post__asideable-content--meta">
+        <div className="blog-post__asideable-content blog-post__asideable-content--meta" key="asideable-content">
           {asideableContent}
         </div>
       ))
