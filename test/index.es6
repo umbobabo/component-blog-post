@@ -8,6 +8,7 @@ describe(`BlogPost`, () => {
       <BlogPost
         section="section"
         title="Required"
+        text="Required"
       />
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
@@ -20,6 +21,7 @@ describe(`BlogPost`, () => {
       <BlogPost
         flyTitle="flytitle"
         title="Required"
+        text="Required"
       />
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
@@ -29,7 +31,7 @@ describe(`BlogPost`, () => {
   });
   it(`renders a title`, () => {
     const post = TestUtils.renderIntoDocument(
-      <BlogPost title="title" />
+      <BlogPost title="title" text="Required" />
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
     post, 'blog-post__title');
@@ -46,6 +48,7 @@ describe(`BlogPost`, () => {
         dateTime={today}
         title="Required"
         dateFormat={dateFormat}
+        text="Required"
       />
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
@@ -74,6 +77,7 @@ describe(`BlogPost`, () => {
     const post = TestUtils.renderIntoDocument(
       <BlogPost image={img}
         title="Required"
+        text="Required"
       />);
     const elm = TestUtils.findRenderedDOMComponentWithClass(post, 'blog-post__image-block');
     elm.props.className.should.equal('blog-post__image-block');
