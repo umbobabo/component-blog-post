@@ -8,6 +8,7 @@ export default class BlogPost extends React.Component {
         src: React.PropTypes.string
       }),
       author: React.PropTypes.string,
+      byline: React.PropTypes.string,
       section: React.PropTypes.string,
       flyTitle: React.PropTypes.string,
       title: React.PropTypes.string.isRequired,
@@ -114,6 +115,16 @@ export default class BlogPost extends React.Component {
           dateTime={this.props.dateTime}
           key={`blog-post__datetime`}
         >{this.props.dateFormat(this.props.dateTime)}</time>));
+    }
+    if (this.props.byline) {
+      asideableContent.push((
+        <p className="blog-post__byline-container" key={`blog-post__byline-container`}>
+          {"by "}
+          <span
+            className="blog-post__byline"
+            itemProp="author"
+          >{this.props.byline}</span>
+        </p>));
     }
     if (asideableContent.length) {
       content.push((
