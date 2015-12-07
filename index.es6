@@ -5,7 +5,8 @@ export default class BlogPost extends React.Component {
     return {
       className: React.PropTypes.string,
       image: React.PropTypes.shape({
-        src: React.PropTypes.string
+        src: React.PropTypes.string,
+        caption: React.PropTypes.string,
       }),
       author: React.PropTypes.string,
       byline: React.PropTypes.string,
@@ -79,14 +80,22 @@ export default class BlogPost extends React.Component {
     }
     if (this.props.rubric) {
       content.push((
-        <div
+        <p
           className="blog-post__rubric"
           itemProp="description"
           key={`blog-post__rubric`}
-        >{this.props.rubric}</div>
+        >{this.props.rubric}</p>
       ));
     }
     if (this.props.image && this.props.image.src) {
+      let caption = null;
+      if (this.props.image.caption) {
+        caption = (
+          <figcaption className="blog-post__image-caption">
+            {this.props.image.caption}
+          </figcaption>
+        );
+      }
       content.push((
         <figure className="blog-post__image"
           key={`blogimg`}
@@ -95,6 +104,7 @@ export default class BlogPost extends React.Component {
             itemProp="image"
             className="blog-post__image-block"
           />
+          {caption}
         </figure>));
     }
     const asideableContent = [];
