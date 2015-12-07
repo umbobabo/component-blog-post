@@ -84,4 +84,37 @@ describe(`BlogPost`, () => {
     elm.props.src.should.equal('//cdn.static-economist.com/sites/all/themes/econfinal/images/svg/logo.svg');
     elm.props.alt.should.equal('Example');
   });
+  it(`renders the section name`, () => {
+    const post = TestUtils.renderIntoDocument(
+      <BlogPost
+        section="test section name"
+        title="Required"
+        text="Required"
+      />);
+    const elm = TestUtils.findRenderedDOMComponentWithClass(post, 'blog-post__section');
+    elm.props.children.should.equal('test section name');
+  });
+  it(`renders the section link in case of a link`, () => {
+    const post = TestUtils.renderIntoDocument(
+      <BlogPost
+        section="test section name"
+        sectionUrl="foo/bar/baz"
+        title="Required"
+        text="Required"
+      />);
+    const elm = TestUtils.findRenderedDOMComponentWithClass(post, 'blog-post__section-link');
+    elm.props.href.should.equal('/foo/bar/baz');
+    elm.props.children.should.equal('test section name');
+  });
+  it(`also works with links pointing to other domains`, () => {
+    const post = TestUtils.renderIntoDocument(
+      <BlogPost
+        section="test section name"
+        sectionUrl="http://foo.io/bar/baz"
+        title="Required"
+        text="Required"
+      />);
+    const elm = TestUtils.findRenderedDOMComponentWithClass(post, 'blog-post__section-link');
+    elm.props.href.should.equal('http://foo.io/bar/baz');
+  });
 });

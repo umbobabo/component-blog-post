@@ -1,4 +1,5 @@
 import React from 'react';
+import urlJoin from 'url-join'
 
 export default class BlogPost extends React.Component {
   static get propTypes() {
@@ -11,6 +12,7 @@ export default class BlogPost extends React.Component {
       author: React.PropTypes.string,
       byline: React.PropTypes.string,
       section: React.PropTypes.string,
+      sectionUrl: React.PropTypes.string,
       flyTitle: React.PropTypes.string,
       title: React.PropTypes.string.isRequired,
       rubric: React.PropTypes.string,
@@ -109,12 +111,26 @@ export default class BlogPost extends React.Component {
     }
     const asideableContent = [];
     if (this.props.section) {
+      let { sectionUrl } = this.props;
+      if (sectionUrl) {
+        if (!/^(\w+:)?\/\//.test(sectionUrl)) {
+          sectionUrl = urlJoin('/', sectionUrl);
+        }
+      }
+      const section = sectionUrl ? (
+        <a
+          href={sectionUrl}
+          className="blog-post__section-link"
+        >
+          {this.props.section}
+        </a>
+      ) : this.props.section;
       asideableContent.push((
         <h3
           className="blog-post__section"
           itemProp="articleSection"
           key={`blog-post__section`}
-        >{this.props.section}</h3>
+        >{section}</h3>
       ));
     }
     if (this.props.dateTime) {
