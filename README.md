@@ -11,6 +11,8 @@ You can override the following variables:
       --blog-post-color-title: green;
       --blog-post-color-flytitle: blue;
       --blog-post-color-text: yellow;
+      --blog-post-color-link: inherit;
+      --blog-post-color-link-underline: pink;
       --blog-post-color-datetime: black;
       --blog-post-background-color-datetime: purple;
 
