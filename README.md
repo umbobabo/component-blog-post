@@ -10,6 +10,8 @@ You can override the following variables:
     :root {
       --blog-post-color-title: green;
       --blog-post-color-flytitle: blue;
+      --blog-post-color-section-link: inherit;
+      --blog-post-color-section-link-hover: rebeccapurple;
       --blog-post-color-text: yellow;
       --blog-post-color-link: inherit;
       --blog-post-color-link-underline: pink;
