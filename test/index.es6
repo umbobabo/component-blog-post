@@ -64,10 +64,20 @@ describe(`BlogPost`, () => {
       />
     );
     const elm = TestUtils.findRenderedDOMComponentWithClass(
-    post, 'blog-post__text');
+      post, 'blog-post__text');
     elm.props.className.should.equal('blog-post__text');
     /* eslint-disable dot-notation */
     elm.props.dangerouslySetInnerHTML['__html'].should.equal('BlogPost text');
+  });
+  it(`can render the text as react 'children' as opposed to dangerouslySetInnerHTML`, () => {
+    const post = TestUtils.renderIntoDocument(
+      <BlogPost
+        text={(<div className="foo" />)}
+        title="Required"
+      />
+    );
+    const elm = TestUtils.findRenderedDOMComponentWithClass( post, 'blog-post__text');
+    elm.props.children.props.className.should.equal('foo');
   });
   it(`renders an image`, () => {
     const img = {

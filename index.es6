@@ -18,7 +18,10 @@ export default class BlogPost extends React.Component {
       rubric: React.PropTypes.string,
       dateTime: React.PropTypes.instanceOf(Date),
       dateFormat: React.PropTypes.func,
-      text: React.PropTypes.string.isRequired,
+      text: React.PropTypes.oneOfType([
+        React.PropTypes.string,
+        React.PropTypes.node
+      ]).isRequired,
       afterText: React.PropTypes.node,
       itemType: React.PropTypes.string,
       itemProp: React.PropTypes.string,
@@ -169,7 +172,7 @@ export default class BlogPost extends React.Component {
           {this.props.author}
         </div>));
     }
-    if (this.props.text) {
+    if (typeof this.props.text === 'string') {
       content.push((
         <div
           className="blog-post__text"
@@ -180,6 +183,16 @@ export default class BlogPost extends React.Component {
             '__html': this.props.text,
           }}
         />));
+    } else if (this.props.text) {
+      content.push((
+        <div
+          className="blog-post__text"
+          itemProp="description"
+          key={`blog-post__text`}
+        >
+          {this.props.text}
+        </div>
+      ));
     }
     if (this.props.afterText) {
       content.push(this.props.afterText);
