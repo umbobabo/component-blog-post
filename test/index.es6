@@ -38,6 +38,20 @@ describe(`BlogPost`, () => {
     elm.props.className.should.equal('blog-post__title');
     elm.props.children.should.equal('title');
   });
+  it(`formats a date`, () => {
+    const dateTimestamp = 1450210706;
+    const today = new Date(dateTimestamp * 1000);
+    const post = TestUtils.renderIntoDocument(
+      <BlogPost
+        dateTime={today}
+        title="Required"
+        text="Required"
+      />
+    );
+    const formattedDate = post.props.dateFormat(post.props.dateTime);
+    formattedDate.should.equal('Dec 15th 2015, 20:18');
+  });
+
   it(`renders a dateTime`, () => {
     const today = new Date();
     function dateFormat(date) {

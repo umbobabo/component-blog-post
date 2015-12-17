@@ -57,10 +57,10 @@ export default class BlogPost extends React.Component {
         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
         let minutes = date.getMinutes() < 10 ? '0' : '';
         minutes += date.getMinutes();
-        return `${shortMonthList[date.getMonth()]}
-                ${addPostFix(date.getDay())}
-                ${date.getFullYear()},
-                ${date.getHours()}:${minutes}`;
+        return [ `${shortMonthList[date.getMonth()]}`,
+                 `${addPostFix(date.getDate())}`,
+                 `${date.getFullYear()},`,
+                 `${date.getHours()}:${minutes}` ].join(' ');
       },
     };
   }
