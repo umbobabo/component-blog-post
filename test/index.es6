@@ -51,6 +51,25 @@ describe(`BlogPost`, () => {
     const formattedDate = post.props.dateFormat(post.props.dateTime);
     formattedDate.should.equal('Dec 15th 2015, 20:18');
   });
+  it(`receives and renders a date string and an ISO timestamp`, () => {
+    const post = TestUtils.renderIntoDocument(
+      <BlogPost
+        title="Required"
+        text="Required"
+        dateString="some date, 2015"
+        timestampISO="2014-12-31T01:40:30Z"
+      />
+    );
+    const formattedDate = post.props.dateFormat(post.props.dateTime);
+    formattedDate.should.equal('');
+    const elm = TestUtils.findRenderedDOMComponentWithClass(
+      post,
+      'blog-post__datetime'
+    );
+    elm.props.className.should.equal('blog-post__datetime');
+    elm.props.children.should.equal('some date, 2015');
+    elm.props.dateTime.should.equal('2014-12-31T01:40:30Z');
+  });
 
   it(`renders a dateTime`, () => {
     const today = new Date();

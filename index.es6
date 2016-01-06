@@ -17,6 +17,8 @@ export default class BlogPost extends React.Component {
       title: React.PropTypes.string.isRequired,
       rubric: React.PropTypes.string,
       dateTime: React.PropTypes.instanceOf(Date),
+      dateString: React.PropTypes.string,
+      timestampISO: React.PropTypes.string,
       dateFormat: React.PropTypes.func,
       text: React.PropTypes.oneOfType([
         React.PropTypes.string,
@@ -144,6 +146,15 @@ export default class BlogPost extends React.Component {
           dateTime={this.props.dateTime}
           key={`blog-post__datetime`}
         >{this.props.dateFormat(this.props.dateTime)}</time>));
+    }
+    if (this.props.dateString && this.props.timestampISO) {
+      asideableContent.push((
+        <time
+          className="blog-post__datetime"
+          itemProp="dateCreated"
+          dateTime={this.props.timestampISO}
+          key={`blog-post__datetime`}
+        >{this.props.dateString}</time>));
     }
     if (this.props.byline) {
       asideableContent.push((
