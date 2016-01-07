@@ -40,7 +40,7 @@ describe(`BlogPost`, () => {
   });
   it(`formats a date`, () => {
     const dateTimestamp = 1450210706;
-    const today = new Date(dateTimestamp * 1000);
+    const today = new Date(2015, 12 - 1, 15, 20, 18);
     const post = TestUtils.renderIntoDocument(
       <BlogPost
         dateTime={today}
