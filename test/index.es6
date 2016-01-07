@@ -60,8 +60,6 @@ describe(`BlogPost`, () => {
         timestampISO="2014-12-31T01:40:30Z"
       />
     );
-    const formattedDate = post.props.dateFormat(post.props.dateTime);
-    formattedDate.should.equal('');
     const elm = TestUtils.findRenderedDOMComponentWithClass(
       post,
       'blog-post__datetime'
